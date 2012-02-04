@@ -1,7 +1,5 @@
 <?php
 
-require 'AcceptLexer.php';
-require 'AcceptParser.php';
 require 'AcceptHeader.php';
 
 class ContainerTest extends \PHPUnit_Framework_TestCase

@@ -30,9 +30,7 @@ class AcceptHeader extends \ArrayObject {
      */
     public function __construct($header)
     {
-        $al = new AcceptLexer($header);
-        $ap = new AcceptParser($al);
-        $acceptedTypes = $ap->parse();
+        $acceptedTypes = $this->_parse($header);
         usort($acceptedTypes, array($this, '_compare'));
         parent::__construct($acceptedTypes);
     }
