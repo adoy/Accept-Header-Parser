@@ -38,38 +38,6 @@ class AcceptHeader extends \ArrayObject {
     }
 
     /**
-     * Parse the accept header and return an array containing
-     * all the informations about the Accepted types
-     *
-     * @param string $header Value of the Accept header
-     * @return array
-     */
-    private function _parse($data)
-    {
-        $array = array();
-        $items = explode(',', $data);
-        foreach ($items as $item) {
-            $elems = explode(';', $item);
-
-            $acceptElement = array();
-            list($type, $subtype) = explode('/', current($elems));
-            $acceptElement['type'] = trim($type);
-            $acceptElement['subtype'] = trim($subtype);
-
-
-            $acceptElement['params'] = array();
-            while(next($elems)) {
-                list($name, $value) = explode('=', current($elems));
-                $acceptElement['params'][trim($name)] = trim($value);
-            }
-
-            $array[] = $acceptElement;
-
-        }
-        return $array;
-    }
-
-    /**
      * Compare two Accepted types with their parameters to know
      * if one media type should be used instead of an other
      *
