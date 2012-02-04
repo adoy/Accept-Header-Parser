@@ -5,6 +5,8 @@
  * AcceptHeader := AcceptItem ["," AcceptItem]
  * AcceptItem   := TERM "/" TERM [ AcceptParam ]
  * AcceptParams := ";" TERM "=" TERM [ AcceptParam ]
+ *
+ * @author      Pierrick Charron <pierrick@webstart.fr>
  */
 class AcceptParser {
 

@@ -1,6 +1,8 @@
 <?php
 /**
  * Lexer for an accept header
+ *
+ * @author      Pierrick Charron <pierrick@webstart.fr>
  */
 class AcceptLexer {
 

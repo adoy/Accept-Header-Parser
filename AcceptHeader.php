@@ -1,8 +1,9 @@
 <?php
-
 /**
  * The AcceptHeader page will parse and sort the different
  * allowed types for the content negociations
+ *
+ * @author      Pierrick Charron <pierrick@webstart.fr>
  */
 class AcceptHeader extends \ArrayObject {
 
