@@ -50,10 +50,11 @@ class AcceptHeader extends \ArrayObject {
             $elems = explode(';', $item);
 
             $acceptElement = array();
-            list($type, $subtype) = explode('/', current($elems));
+            $mime = current($elems);
+            list($type, $subtype) = explode('/', $mime);
             $acceptElement['type'] = trim($type);
             $acceptElement['subtype'] = trim($subtype);
-
+            $acceptElement['raw'] = $mime;
 
             $acceptElement['params'] = array();
             while(next($elems)) {
