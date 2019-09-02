@@ -2,7 +2,9 @@
 
 require 'AcceptHeader.php';
 
-class ContainerTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class ContainerTest extends TestCase
 {
 
     public function testHeader1() 
@@ -29,6 +31,12 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('text/html', $this->_getMedia($acceptHeader[1]));
         $this->assertEquals('text/*', $this->_getMedia($acceptHeader[2]));
         $this->assertEquals('*/*', $this->_getMedia($acceptHeader[3]));
+    }
+
+    public function testHeader4()
+    {
+        $acceptHeader = new AcceptHeader('text, text/html');
+        $this->assertEquals('text/html', $this->_getMedia($acceptHeader[0]));
     }
 
     private function _getMedia(array $mediaType) 
